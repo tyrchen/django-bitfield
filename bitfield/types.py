@@ -121,9 +121,13 @@ class BitHandler(object):
         return self._value == other._value
 
     def __repr__(self):
-        return '<%s: %s>' % (self.__class__.__name__, ', '.join('%s=%s' % (k, self.get_bit(n).is_set) for n, k in enumerate(self._keys)),)
+        return str(self._value)
+        #return '<%s: %s>' % (self.__class__.__name__, ', '.join('%s=%s' % (k, self.get_bit(n).is_set) for n, k in enumerate(self._keys)),)
 
     def __str__(self):
+        return str(self._value)
+
+    def __unicode__(self):
         return str(self._value)
 
     def __int__(self):
